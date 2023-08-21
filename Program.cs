@@ -1,4 +1,6 @@
-﻿class Program{
+﻿using DP.Factory;
+
+class Program{
     public static void Main(string[] args){
         //Singleton
         // Task task1 = Task.Factory.StartNew(() => {
@@ -20,18 +22,19 @@
         // Console.WriteLine(counterTwo.count.ToString());
 
         //Factory Method
-        // string cardNo,cardCode;
+        // string cardNo,bankCode;
         // Console.WriteLine("Enter card number");
         // cardNo=Console.ReadLine();
-        // cardCode=cardNo.Substring(0,6);
-        // BankFactory bankFactory=new BankFactory();
+        // bankCode=cardNo.Substring(0,6);
+        BankFactory bankFactory=new BankFactory();
         // IBank bank=bankFactory.GetBank(cardCode);
         // Console.WriteLine(bank.Withdraw());
 
 
 
         //Abstract Factory
-        //
+        IPaymentCard paymentCard=bankFactory.GetPaymentCard("11");
+        Console.WriteLine(paymentCard.GetName());
 
         Console.ReadKey();
     }

@@ -9,4 +9,13 @@ class BankFactory : IBankFactory
         }
         return null;
     }
+
+    public IPaymentCard GetPaymentCard(string cardNumber)
+    {
+        switch (cardNumber){
+            case "12":return new VisaCard();
+            case "11":return new MasterCard();
+        }
+        return null;
+    }
 }
