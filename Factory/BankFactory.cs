@@ -1,3 +1,4 @@
+namespace DP.Factory;
 class BankFactory : IBankFactory
 {
     public IBank GetBank(string bankCode)

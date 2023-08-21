@@ -19,14 +19,19 @@
         // Console.WriteLine(counter.count.ToString());
         // Console.WriteLine(counterTwo.count.ToString());
 
-        //Factory
-        string cardNo,cardCode;
-        Console.WriteLine("Enter card number");
-        cardNo=Console.ReadLine();
-        cardCode=cardNo.Substring(0,6);
-        BankFactory bankFactory=new BankFactory();
-        IBank bank=bankFactory.GetBank(cardCode);
-        Console.WriteLine(bank.Withdraw());
+        //Factory Method
+        // string cardNo,cardCode;
+        // Console.WriteLine("Enter card number");
+        // cardNo=Console.ReadLine();
+        // cardCode=cardNo.Substring(0,6);
+        // BankFactory bankFactory=new BankFactory();
+        // IBank bank=bankFactory.GetBank(cardCode);
+        // Console.WriteLine(bank.Withdraw());
+
+
+
+        //Abstract Factory
+        //
 
         Console.ReadKey();
     }

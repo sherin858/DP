@@ -1,3 +1,4 @@
+namespace DP.Factory;
 class BankA : IBank
 {
     public string Withdraw()
