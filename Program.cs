@@ -1,5 +1,5 @@
 ﻿using DP.Factory;
-
+using DP.StructuralPatterns;
 class Program{
     public static void Main(string[] args){
         //Singleton
@@ -33,8 +33,15 @@ class Program{
 
 
         //Abstract Factory
-        IPaymentCard paymentCard=bankFactory.GetPaymentCard("11");
-        Console.WriteLine(paymentCard.GetName());
+        // IPaymentCard paymentCard=bankFactory.GetPaymentCard("11");
+        // Console.WriteLine(paymentCard.GetName());
+
+        #region proxy
+            SMSServiceProxy proxy = new SMSServiceProxy();
+            Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
+            Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
+            Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
+        #endregion
 
         Console.ReadKey();
     }
