@@ -26,7 +26,7 @@ class Program{
         // Console.WriteLine("Enter card number");
         // cardNo=Console.ReadLine();
         // bankCode=cardNo.Substring(0,6);
-        BankFactory bankFactory=new BankFactory();
+        // BankFactory bankFactory=new BankFactory();
         // IBank bank=bankFactory.GetBank(cardCode);
         // Console.WriteLine(bank.Withdraw());
 
@@ -37,10 +37,18 @@ class Program{
         // Console.WriteLine(paymentCard.GetName());
 
         #region proxy
-            SMSServiceProxy proxy = new SMSServiceProxy();
-            Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
-            Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
-            Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
+            // SMSServiceProxy proxy = new SMSServiceProxy();
+            // Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
+            // Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
+            // Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
+        #endregion
+
+
+        #region decorator
+            SMSService smsService = new SMSService();
+            EmailDecorator emailDecorator = new EmailDecorator();
+            emailDecorator.SetService(smsService);
+            Console.WriteLine(emailDecorator.SendSMS("122","0123456789","Hello"));
         #endregion
 
         Console.ReadKey();
