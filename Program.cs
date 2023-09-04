@@ -1,5 +1,7 @@
-﻿using DP.Factory;
+﻿using System.Reflection.Metadata.Ecma335;
+using DP.Factory;
 using DP.StructuralPatterns;
+using DP.StructuralPatterns.Adapter;
 class Program{
     public static void Main(string[] args){
         //Singleton
@@ -45,12 +47,27 @@ class Program{
 
 
         #region decorator
-            SMSService smsService = new SMSService();
-            EmailDecorator emailDecorator = new EmailDecorator();
-            emailDecorator.SetService(smsService);
-            Console.WriteLine(emailDecorator.SendSMS("122","0123456789","Hello"));
+            // SMSService smsService = new SMSService();
+            // EmailDecorator emailDecorator = new EmailDecorator();
+            // emailDecorator.SetService(smsService);
+            // Console.WriteLine(emailDecorator.SendSMS("122","0123456789","Hello"));
         #endregion
 
+        #region Adapter
+        Employee emp = new Employee(){
+            Name="Sherin",
+            BasicSalary=1000
+        };
+        MachineOperator oper = new MachineOperator(){
+            Name="Ali",
+            BasicSalary=2000,
+            ShiftCode="shift code"
+        };
+        SalaryCalculator calculator = new SalaryCalculator();
+        SalaryAdapter salaryAdapter = new SalaryAdapter();
+        Console.WriteLine($"{salaryAdapter.CalcSalary(oper)}");
+        Console.WriteLine(calculator.CalcSalary(emp));
+        #endregion
         Console.ReadKey();
     }
 }
