@@ -4,6 +4,8 @@ using DP.StructuralPatterns;
 using DP.StructuralPatterns.Adapter;
 class Program{
     public static void Main(string[] args){
+
+        #region Singleton
         //Singleton
         // Task task1 = Task.Factory.StartNew(() => {
         //     Counter counter= Counter.GetInstance();
@@ -22,7 +24,9 @@ class Program{
         // counterTwo.AddOne();
         // Console.WriteLine(counter.count.ToString());
         // Console.WriteLine(counterTwo.count.ToString());
+        #endregion
 
+        #region factory
         //Factory Method
         // string cardNo,bankCode;
         // Console.WriteLine("Enter card number");
@@ -37,6 +41,7 @@ class Program{
         //Abstract Factory
         // IPaymentCard paymentCard=bankFactory.GetPaymentCard("11");
         // Console.WriteLine(paymentCard.GetName());
+        #endregion
 
         #region proxy
             // SMSServiceProxy proxy = new SMSServiceProxy();
@@ -44,7 +49,6 @@ class Program{
             // Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
             // Console.WriteLine(proxy.SendSMS("123","0123456789","hello"));
         #endregion
-
 
         #region decorator
             // SMSService smsService = new SMSService();
@@ -54,20 +58,21 @@ class Program{
         #endregion
 
         #region Adapter
-        Employee emp = new Employee(){
-            Name="Sherin",
-            BasicSalary=1000
-        };
-        MachineOperator oper = new MachineOperator(){
-            Name="Ali",
-            BasicSalary=2000,
-            ShiftCode="shift code"
-        };
-        SalaryCalculator calculator = new SalaryCalculator();
-        SalaryAdapter salaryAdapter = new SalaryAdapter();
-        Console.WriteLine($"{salaryAdapter.CalcSalary(oper)}");
-        Console.WriteLine(calculator.CalcSalary(emp));
+        // Employee emp = new Employee(){
+        //     Name="Sherin",
+        //     BasicSalary=1000
+        // };
+        // MachineOperator oper = new MachineOperator(){
+        //     Name="Ali",
+        //     BasicSalary=2000,
+        //     ShiftCode="shift code"
+        // };
+        // SalaryCalculator calculator = new SalaryCalculator();
+        // SalaryAdapter salaryAdapter = new SalaryAdapter();
+        // Console.WriteLine($"{salaryAdapter.CalcSalary(oper)}");
+        // Console.WriteLine(calculator.CalcSalary(emp));
         #endregion
+        
         Console.ReadKey();
     }
 }
