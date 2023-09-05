@@ -2,6 +2,7 @@
 using DP.Factory;
 using DP.StructuralPatterns;
 using DP.StructuralPatterns.Adapter;
+using DP.BehaviouralPatterns.Strategy;
 class Program{
     public static void Main(string[] args){
 
@@ -72,6 +73,14 @@ class Program{
         // Console.WriteLine($"{salaryAdapter.CalcSalary(oper)}");
         // Console.WriteLine(calculator.CalcSalary(emp));
         #endregion
+        
+        #region Strategy
+        // NormalDuck normalDuck = new NormalDuck();
+        // Console.WriteLine(normalDuck.Fly());
+        // normalDuck.SetFlyBehaviour(new FlyWithBox());
+        // Console.WriteLine(normalDuck.Fly());
+        #endregion
+        
         
         Console.ReadKey();
     }
