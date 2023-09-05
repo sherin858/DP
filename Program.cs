@@ -3,6 +3,7 @@ using DP.Factory;
 using DP.StructuralPatterns;
 using DP.StructuralPatterns.Adapter;
 using DP.BehaviouralPatterns.Strategy;
+using DP.BehaviouralPatterns.Observer;
 class Program{
     public static void Main(string[] args){
 
@@ -81,7 +82,16 @@ class Program{
         // Console.WriteLine(normalDuck.Fly());
         #endregion
         
-        
+        #region Observer
+        Subject subject = new Subject();
+        IObserver observerA = new ObserverA();
+        subject.Attach(observerA);
+        subject.SomeBusinessLogic();
+
+        IObserver observerB = new ObserverB();
+        subject.Attach(observerB);
+        subject.SomeBusinessLogic();
+        #endregion
         Console.ReadKey();
     }
 }
